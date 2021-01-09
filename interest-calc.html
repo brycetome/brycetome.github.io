@@ -24,8 +24,8 @@
         function myJsFunction(){
            var borrowed=document.getElementById('borrowed').value;
            var ir=document.getElementById('ir').value;
-           console.log("inside function")
-           output.innerHTML= borrowed*Math.pow((1+ir/12), 10*12)
+           console.log("inside function");
+           output.innerHTML= borrowed*Math.pow((1+ir/12), 10*12).toFixed(2);
         }
 
 
