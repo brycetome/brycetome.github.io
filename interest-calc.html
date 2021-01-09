@@ -3,13 +3,15 @@
     <head>
         <h2>Calculator App</h2>
 
-        <form>
+        <form name="f1">
             <input type="number" id="borrowed" placeholder="Amount Borrowed" required>
             <br><br>
             <input type="number" id="ir" placeholder="Interest Rate" required>
             <br><br>
             <input type="button" id="btn" value="Go" onclick="myJsFunction()">
         </form>
+
+        <div id="output"></div>
 
 
 
@@ -23,6 +25,7 @@
            var borrowed=document.getElementById('borrowed').value;
            var ir=document.getElementById('ir').value;
            console.log("inside function")
+           output.innerHTML= borrowed*Math.pow((1+ir/12), 10*12)
         }
 
 
