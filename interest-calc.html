@@ -2,16 +2,23 @@
 <html>
     <head>
         <h2>Calculator App</h2>
+        
+        <p>Assumes monthly compounded interest, <br> not paying interest as it occurs, 
+            <br>or not paying anything until the user specified years.</p>
 
         <form name="f1">
             <input type="number" id="borrowed" placeholder="Amount Borrowed" required>
             <br><br>
             <input type="number" id="ir" placeholder="Interest Rate" required>
             <br><br>
+            <input type="number" id="years" placeholder="Years pay off" required>
+            <br><br>
             <input type="button" id="btn" value="Go" onclick="myJsFunction()">
         </form>
 
-        <div id="output"></div>
+        <label>
+            <div id="output"></div>
+        </label> 
 
 
 
@@ -24,8 +31,9 @@
         function myJsFunction(){
            var borrowed=document.getElementById('borrowed').value;
            var ir=document.getElementById('ir').value;
+           var years=document.getElementById('years').value;
            console.log("inside function");
-           output.innerHTML= (borrowed*Math.pow((1+ir/12), 10*12)).toFixed(2);
+           output.innerHTML= (borrowed*Math.pow((1+ir/12), years*12)).toFixed(2);
         }
 
 
