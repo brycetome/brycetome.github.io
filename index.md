@@ -1,3 +1,7 @@
+##Um, okay we just chillin with MarkDown for now lol
+
+[interest-calc.html](interest-calc.html)
+
 ## Welcome to GitHub Pages
 
 You can use the [editor on GitHub](https://github.com/brycetome/brycetome.github.io/edit/main/index.md) to maintain and preview the content for your website in Markdown files.
