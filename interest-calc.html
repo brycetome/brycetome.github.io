@@ -1,23 +1,48 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <h2>Calculator App</h2>
-        
-        <p>Assumes monthly compounded interest, <br> not paying interest as it occurs, 
-            <br>or not paying anything until the user specified years.</p>
 
-        <form name="f1">
-            <input type="number" id="borrowed" placeholder="Amount Borrowed" required>
+    <style>
+        .head {
+            background-color: rgb(98, 186, 241);
+            padding: 10px;
+            margin: 10px;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .title {
+            font-family:'Garamond', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+            color: rgb(0, 0, 0);
+        }
+
+        .description {
+            font-family:'Garamond', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+            color: rgb(20, 20, 20);
+        }
+
+
+    </style>
+
+
+
+
+    <head>
+        <h2 class="head title">Calculator App</h2>
+        
+        <p class="head description">Assumes monthly compounded interest, not paying interest as it occurs, or not paying anything until the user specified years.</p>
+
+        <form name="f1" class="head">
+            <input type="number" id="borrowed" placeholder="Amount Borrowed" class="description" required>
             <br><br>
-            <input type="number" id="ir" placeholder="Interest Rate" required>
+            <input type="number" id="ir" placeholder="Interest Rate"  class="description" required>
             <br><br>
-            <input type="number" id="years" placeholder="Years pay off" required>
+            <input type="number" id="years" placeholder="Years pay off"  class="description" required>
             <br><br>
-            <input type="button" id="btn" value="Go" onclick="myJsFunction()">
+            <input type="button" id="btn" value="Go" onclick="myJsFunction()" class="description">
         </form>
 
-        <label>
-            <p>Total cost: $<div id="output"></div></p>
+        <label >
+            <p class="head description">Total cost: $<div id="output"></div></p>
         </label> 
 
 
