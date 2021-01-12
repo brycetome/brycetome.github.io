@@ -1,6 +1,7 @@
-## Welcome to my projects page! 
+## Um, okay we just chillin with MarkDown for now lol
 
-[interest-calc.html](interest-calc.html) is my first project on my own using HTML and CSS. It calculates the total cost of loan using compound interest and other assumptions listed on the app.
+[interest-calc.html](interest-calc.html)
+[bootstrap-calc.html v2](bootstrap-calc.html)
 
 ## Welcome to GitHub Pages
 
