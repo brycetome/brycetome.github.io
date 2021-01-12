@@ -1,7 +1,7 @@
 ## Um, okay we just chillin with MarkDown for now lol
 
 [interest-calc.html](interest-calc.html)
-[bootstrap-calc.html v2](bootstrap-calc.html)
+[bootstrap-calc.html](bootstrap-calc.html)
 
 ## Welcome to GitHub Pages
 
