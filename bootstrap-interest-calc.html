@@ -85,7 +85,7 @@
            var ir=document.getElementById('ir').value;
            var years=document.getElementById('years').value;
            console.log("inside function");
-           output.innerHTML= "The total cost is " + (borrowed*Math.pow((1+ir/12), years*12)).toString(2);
+           output.innerHTML= "The total cost is " + (borrowed*Math.pow((1+ir/12), years*12)).toFixed(2).toString();
         }
 
 
