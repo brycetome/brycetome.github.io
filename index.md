@@ -2,7 +2,7 @@
 
 [interest-calc.html](interest-calc.html)
 
-This was my first version just using basic html and css knowledge.
+This was my first version just using basic html and css knowledge. Helped me apply the knowledge I was learning on [freecodecamp.org](freecodecamp.org).
 
 [bootstrap-interest-calc.html](bootstrap-interest-calc.html)
 
