@@ -8,4 +8,6 @@ This was my first version just using basic html and css knowledge. Helped me app
 
 Using the Bootstrap framework, I was able to quickly and easily make a second version that looks cleaner and adjusts according to the application windows size.
 
+[interest-calc-v3.html](interest-calc-v3.html)
+
 ## Welcome to GitHub Pages
