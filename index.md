@@ -6,7 +6,7 @@ This was my first version just using basic html and css knowledge. Helped me app
 
 [bootstrap-interest-calc.html](bootstrap-interest-calc.html)
 
-Using the Bootstrap framework, I was able to quickly and easily make a second version that looks cleaner and adjusts according to the application windows size.
+Using the Bootstrap framework, I was able to quickly and easily make a second version that looks cleaner and adjusts according to the application window size.
 
 [interest-calc-v3.html](interest-calc-v3.html)
 
