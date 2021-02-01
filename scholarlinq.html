@@ -1,0 +1,346 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ScholarLinQ</title>
+    <link rel="stylesheet" href="../css/cover.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script type="text/javascript" src="../js/jquery.js"></script>
+
+    <style>
+        [class*="col"] {
+        text-align: center;
+        }
+        [class*="con"]{
+            
+            background-color: #f3f3f3;
+            border: 2px solid #fff;
+            color: #fff;
+            text-align: center;
+        }
+        .textstlye {
+            font: "Helvetica";
+            size: 10px;
+        }
+
+
+        .openForm{
+            position: absolute;
+            bottom: 0px;
+        }
+
+        .form-popup {
+            display: block;
+            bottom: 0px;
+            position: absolute;
+        }
+
+        .form-popup2 {
+            display: none;
+        }
+
+        /* Add animation (fade in the popup) */
+        @-webkit-keyframes fadeIn {
+        from {opacity: 0;} 
+        to {opacity: 1;}
+        }
+
+        @keyframes fadeIn {
+        from {opacity: 0;}
+        to {opacity:1 ;}
+        }
+    </style>
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+  </head>
+  <body style="background-color: #f0ffff;" data-new-gr-c-s-check-loaded="14.993.0" data-gr-ext-installed="">
+
+    <div class="form-popup">
+        <div class="row gy-2">
+            <div>
+                <button type="button" class="btn btn-primary" onclick="openForm()" id="toggle">Open</button>
+            </div>
+        </div>
+
+        <div class="form-popup2" id="myForm">
+            <form class= "row gy-2 gx-3 align-items-center">
+                    <div class="col-6">
+                        <div class="input-group">
+                            <span class="input-group-text">$</span>
+                            <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)" 
+                                placeholder="Amount borrowed" min="0" step="1" data-bind="value:replyNumber" id="borrowed">
+                        </div>
+                    </div>
+            
+                    <div class="col-5">
+                        <div class="input-group">
+                            
+                            <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)" 
+                                placeholder="Interest" min="0" step="0.1" data-bind="value:replyNumber" id="ir">
+                            <span class="input-group-text text">%</span>
+                        </div>
+                    </div>
+                    <div class="col-7">
+                        <div class="input-group">
+                            <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)" 
+                                placeholder="Years until paid" min="0" step="1" data-bind="value:replyNumber" id="years">
+                                <span class="input-group-text">Years</span>
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                        <button type="button" class="btn btn-primary" onclick="interestcalc()">Submit</button>
+                    </div>
+                </form>
+            
+            
+                <div class="">
+                    <div class="row">
+                        <div class="col-sm"><span id="output" style="color: rgb(243, 154, 21); font-weight: bold; font-family: helvetica; size: 10px"></span></div>
+                    </div>
+                </div>
+            </form>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+
+    function interestcalc(){
+       var borrowed=document.getElementById('borrowed').value;
+       var ir=document.getElementById('ir').value;
+       var years=document.getElementById('years').value;
+       console.log("inside function");
+       output.innerHTML= "The total cost would be $" + ((borrowed*Math.pow((1+ir/12), years*12)).toFixed(2)).toString() + ".";
+    }
+
+
+
+    function openForm() {
+        var popup = document.getElementById("myForm");
+        var displaySetting = popup.style.display;
+        var btntxt = document.getElementById('toggle');
+        if(displaySetting == 'block') {
+            popup.style.display="none";
+            btntext.innerHTML="close";
+        }
+        else {
+            popup.style.display="block";
+            btntext.innerHTML="open";
+        }
+    }
+
+    function closeForm() {
+        document.getElementById("myForm").style.display = "none";
+    }
+
+
+   </script>
+
+
+
+<script src="https://unpkg.com/@popperjs/core@2.4.0/dist/umd/popper.min.js"></script>
+<script src="js/bootstrap.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="login" id="login">
+      <button class="exit" onclick="document.getElementById('login').style.display = 'none';">
+        <img src="../pictures/exit_window.png" alt="exit" height="10" width="10">
+      </button>
+      <h1>Login</h1>
+      <div class="creds">
+        <input class="form-control" type="text" id="email" placeholder="Email">
+        <input class="form-control" type="password" id="password" placeholder="Password">
+        <button class="login-button" onclick="login()">
+          Login to ScholarLinQ
+        </button>
+        <div>
+          <a href="/forgot_password" class="forgot-password">
+            Forgot your password?
+          </a>
+        </div>
+        <div>
+          <a href="/signup" class="forgot-password">Don't have an account yet?</a>
+        </div>
+
+        <div style="width: 100%">
+          <span class="terms">
+            By continuing here, you acknowledge and agree to our
+            <a href="/terms_of_service">Terms of Service</a> and
+            <a href="/privacy_policy">Privacy Policy</a>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="top">
+      <div class="top-thing">
+        <div>
+          <h3 style="margin: 0">ScholarLinQ</h3>
+        </div>
+        <div style="display: flex; width: 80%; margin-left: 10%">
+          <a href="#" onclick="document.getElementById('login').style.display = 'block';" class="top-button">Login</a>
+          <a href="/signup" class="top-button">Signup</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="bgimg">
+      <div class="first">
+        <div class="first-text">
+          <h1 style="padding-bottom: 40px; padding-top: 20px;"><b>Scholarships With Confidence.</b></h1>
+          <h2 style="padding-bottom: 40px;">
+            Learn to write incredible scholarship essays and find the best scholarships in your backyard.
+          </h2>
+        </div>
+        <h2><a href="/signup" class="first-button"><b>Start Free Trial.</b></a></h2>
+        <div class="introvid">
+
+          
+      </div>
+      </div>
+    </div>
+
+    <br><br>
+
+    <div class="second">
+      <div class="second-text-block">
+        <h2>ScholarLinq was reviewed by scholarhip evaluators.</h2>
+      </div>
+      <div class="second-video-block"><video width="70%" controls="" controlslist="nodownload" poster="https://scholarlinq-videos-test.s3.us-east-2.amazonaws.com/poster+picture+commerical.PNG"><source src="https://scholarlinq-videos-test.s3.us-east-2.amazonaws.com/Final+ScholarlinQ+commerical.mp4"></video>
+      </div>
+        
+    </div>
+    <div class="third">
+      <div class="second-text-block">
+        <h2>By students. For students.</h2>
+        <br>
+      </div>
+      <div class="third-block">
+        <div class="third-note">
+          <div class="third-note-text">
+            <h4>Simple steps.</h4>
+            <p>
+              We have broken down every part of the scholarship process into simple,
+              smaller components. Each section has a short video that explains
+              exactly what you need to do with a text box editor for each step.
+          
+            </p>
+          </div>
+        </div>
+
+        <div class="third-note">
+          <div class="third-note-text">
+            <h4>Save and reuse.</h4>
+            <p>
+              We keep everything separated so that you don't have to. Anytime you
+              have a new idea, just save a new note.
+
+              Save your hard-work and reuse it on as many
+              applications as possible.
+            </p>
+          </div>
+        </div>
+
+        <div class="third-note">
+          <div class="third-note-text">
+            <h4>We teach differently.</h4>
+            <p>
+              Our content was rebuilt 13 times and counting.  It isn't about overloading you with information, it is about focusing on what gets you results.  You never have to guess on what you have to do.
+            </p>
+          </div>
+        </div>
+
+        <div class="third-note">
+          <div class="third-note-text">
+            <h4>Your timing is right.</h4>
+            <p>
+              You are not behind with scholarships, you are right where you need to be. Great scholarships are available every year.  The right guide will take you places you never knew existed.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="fourth">
+      <div class="second-text-block">
+        <h2>
+          Let's get started on your future together. <br>Try it now for free.
+        </h2>
+      </div>
+      <div class="calendar">
+        <div class="calendar-section">
+          <h5>Day 1</h5>
+          <div class="stick-holder">
+            <div class="circle"></div>
+            <div class="line"></div>
+          </div>
+          <p>Get access to all of our content for FREE and hit the ground running.</p>
+        </div>
+        <div class="calendar-section">
+          <h5>Day 7</h5>
+          <div class="stick-holder">
+            <div class="circle"></div>
+            <div class="line"></div>
+          </div>
+          <p>Trial ends.</p>
+        </div>
+        <div class="calendar-section">
+          <h5>...</h5>
+          <div class="stick-holder">
+            <div class="circle"></div>
+          </div>
+          <p>Continue growing and applying!</p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      window.onload = function () {
+        let now = new Date(Date.now());
+        let thing = "" + now.getMonth() + " " + now.getDate();
+        document.getElementById("now").innerHTML = thing;
+
+        now.setDate(now.getDate() + 7);
+        thing = "" + now.getMonth() + " " + now.getDate();
+        document.getElementById("then").innerHTML = thing;
+      };
+
+      function login() {
+        console.log("being called");
+        let email = document.getElementById("email").value;
+        let password = document.getElementById("password").value;
+
+        if (email == null || password == null) {
+          // Error message
+          // TODO
+        } else {
+          let url = "/api/signin";
+          let data = { email: email, password: password };
+
+          $.post(url, data, (response) => {
+            console.log(response);
+            if (response.valid == false) {
+              // Error message
+              // TODO
+            } else {
+              window.location.href = response.url;
+            }
+          });
+        }
+      }
+    </script>
+    
+  
+</body></html>
