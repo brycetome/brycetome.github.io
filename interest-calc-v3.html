@@ -29,17 +29,11 @@
         }
 
         .form-popup {
-            visibility: hidden;
+            display: block;
             bottom: 0px;
             position: absolute;
         }
 
-        /* Toggle this class when clicking on the popup container (hide and show the popup) */
-        .popup .show {
-            visibility: visible;
-            -webkit-animation: fadeIn 1s;
-            animation: fadeIn 1s
-        }
         /* Add animation (fade in the popup) */
         @-webkit-keyframes fadeIn {
         from {opacity: 0;} 
@@ -63,45 +57,46 @@
             <button type="button" class="btn btn-primary" onclick="openForm()">Open1</button>
         </div>
 
+        <div class="form-popup">
+            <form class= "row gy-2 gx-3 align-items-center" id="myForm">
+                    <div class="col-6">
+                        <div class="input-group">
+                            <span class="input-group-text">$</span>
+                            <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)" 
+                                placeholder="Amount borrowed" min="0" step="1" data-bind="value:replyNumber" id="borrowed">
+                        </div>
+                    </div>
+            
+                    <div class="col-5">
+                        <div class="input-group">
+                            
+                            <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)" 
+                                placeholder="Interest" min="0" step="0.1" data-bind="value:replyNumber" id="ir">
+                            <span class="input-group-text text">%</span>
+                        </div>
+                    </div>
+                    <div class="col-7">
+                        <div class="input-group">
+                            <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)" 
+                                placeholder="Years until paid" min="0" step="1" data-bind="value:replyNumber" id="years">
+                                <span class="input-group-text">Years</span>
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                        <button type="button" class="btn btn-primary" onclick="interestcalc()">Submit</button>
+                    </div>
+                </form>
+            
+            
+                <div class="">
+                    <div class="row">
+                        <div class="col-sm"><span id="output" style="color: rgb(243, 154, 21); font-weight: bold; font-family: helvetica; size: 10px"></span></div>
+                    </div>
+                </div>
 
-        <form class="row gy-2 gx-3 align-items-center form-popup popup" id="myForm">
-                <div class="col-6">
-                    <div class="input-group">
-                        <span class="input-group-text">$</span>
-                        <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)" 
-                            placeholder="Amount borrowed" min="0" step="1" data-bind="value:replyNumber" id="borrowed">
-                    </div>
-                </div>
-        
-                <div class="col-5">
-                    <div class="input-group">
-                        
-                        <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)" 
-                            placeholder="Interest" min="0" step="0.1" data-bind="value:replyNumber" id="ir">
-                        <span class="input-group-text text">%</span>
-                    </div>
-                </div>
-                <div class="col-7">
-                    <div class="input-group">
-                        <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)" 
-                            placeholder="Years until paid" min="0" step="1" data-bind="value:replyNumber" id="years">
-                            <span class="input-group-text">Years</span>
-                    </div>
-                </div>
-                <div class="col-auto">
-                    <button type="button" class="btn btn-primary" onclick="interestcalc()">Submit</button>
-                </div>
-            </form>
-        
-        
-            <div class="">
-                <div class="row">
-                    <div class="col-sm"><span id="output" style="color: rgb(243, 154, 21); font-weight: bold; font-family: helvetica; size: 10px"></span></div>
-                </div>
+
             </div>
-
-
-        </div>
+    </div>
 
     
     <script type="text/javascript">
@@ -118,7 +113,14 @@
 
         function openForm() {
             var popup = document.getElementById("myForm");
-            popup.classList.toggle("show");
+            var displaySetting = popup.style.display;
+            if(displaySetting == 'block') {
+                popup.style.display="none";
+
+            }
+            else {
+                popup.style.display="block";
+            }
         }
 
         function closeForm() {
