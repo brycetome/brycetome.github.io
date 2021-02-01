@@ -35,7 +35,7 @@
         }
 
         .form-popup2 {
-            display: block;
+            display: none;
         }
 
         /* Add animation (fade in the popup) */
@@ -125,11 +125,11 @@
             var btntxt = document.getElementById('toggle');
             if(displaySetting == 'block') {
                 popup.style.display="none";
-                btntext.innerHTML="hide";
+                btntext.innerHTML="close";
             }
             else {
                 popup.style.display="block";
-                btntext.innerHTML="shoq";
+                btntext.innerHTML="open";
             }
         }
 
