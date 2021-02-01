@@ -30,7 +30,8 @@
 
         .form-popup {
             visibility: hidden;
-            bottom: 0;
+            bottom: 0px;
+            position: absolute;
         }
 
 
@@ -111,7 +112,8 @@
 
 
         function openForm() {
-            document.getElementById("myForm").style.display = "block";
+            var popup = document.getElementById("myForm");
+            popup.classList.toggle("show");
         }
 
         function closeForm() {
