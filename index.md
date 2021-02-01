@@ -12,8 +12,6 @@ Using the Bootstrap framework, I was able to quickly and easily make a second ve
 
 This is a WIP where the calculator pops up and disappears when a button is clicked.
 
-[test on site](scholarlinq.html)
 
-I put the calculator on my friends website as a test.
 
 ## Welcome to GitHub Pages
