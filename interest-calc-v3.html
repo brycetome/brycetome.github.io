@@ -34,7 +34,12 @@
             position: absolute;
         }
 
-
+        /* Toggle this class when clicking on the popup container (hide and show the popup) */
+        .popup .show {
+        visibility: visible;
+        -webkit-animation: fadeIn 1s;
+        animation: fadeIn 1s
+        }
         /* Add animation (fade in the popup) */
         @-webkit-keyframes fadeIn {
         from {opacity: 0;} 
@@ -55,7 +60,7 @@
 <body>
 
         <div class="col-auto">
-            <button type="button" class="btn btn-primary" onclick="openForm()">Open</button>
+            <button type="button" class="btn btn-primary" onclick="openForm()">Open1</button>
         </div>
 
 
