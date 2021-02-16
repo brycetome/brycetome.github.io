@@ -12,9 +12,9 @@ Using the Bootstrap framework, I was able to quickly and easily make a second ve
 
 This is a WIP where the calculator pops up and disappears when a button is clicked -- the button is on the bottom of the page.
 
-[scholarlinq.com video](scholarlinq.com)
+[scholarlinq.com video](https://scholarlinq.com/)
 
-Not a programming project, but made this video in a day for my friend's startup -- which is a very quick turnaround to build a video. This is the friend who may want to use the calculator on this site.
+Not a programming project, but made this video in a day for my friend's startup -- which is a very quick turnaround to build a video because he requested and needed it that soon, but we worked on the script together. This is the friend who may want to use the calculator I made above on this site.
 
 
 
