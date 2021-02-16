@@ -10,8 +10,12 @@ Using the Bootstrap framework, I was able to quickly and easily make a second ve
 
 [interest-calc-v3.html](interest-calc-v3.html)
 
-This is a WIP where the calculator pops up and disappears when a button is clicked.
+This is a WIP where the calculator pops up and disappears when a button is clicked -- the button is on the bottom of the page.
+
+[scholarlinq.com video](scholarlinq.com)
+
+Not a programming project, but made this video in a day for my friend's startup -- which is a very quick turnaround to build a video. This is the friend who may want to use the calculator on this site.
 
 
 
-## Welcome to GitHub Pages
+## GitHub Pages
