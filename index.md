@@ -16,6 +16,10 @@ This is a WIP where the calculator pops up and disappears when a button is click
 
 Not a programming project, but made this video in a day for my friend's startup -- which is a very quick turnaround to build a video because he requested and needed it that soon, but we worked on the script together. Just scroll to see it on the link. This is the friend who may want to use the calculator I made above on this site.
 
+## Potential Ideas
+
+I'm thinking about returning to my smart mirror and adding a feature with a running app API to display my past runs. I also may try to start a MySQL project to store information like and ask a smart speaker to speak it such as: What time is practice? How far do I run today?
+
 
 
 ## GitHub Pages
