@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+
+<body>
+
+   <h3>Latest run</h3>
+
+    <span id="output_name" style="color:rgb(255, 0, 0); font-family: helvetica; font-weight: bold"></span>
+    <span id="output_distance" style="font-family: helvetica"></span>
+    <span id="output_duration" style="font-family: helvetica"></span>
+    <span id="output_pace" style="font-family: helvetica"></span>
+
+    <!--button type="button" id="btnone" value="Go" onclick="printout()" class="btn btn-primary">Go</button-->
+
+    <script type="text/javascript">
+
+            var objfinal;
+            const auth_link = "https://www.strava.com/oauth/token"
+            var obj;
+
+            async function getActivities(res){
+                var obj;
+                const activities_link = `https://www.strava.com/api/v3/athlete/activities?access_token=${res.access_token}` //gets access token, but how?
+                const response = await fetch(activities_link)
+                    //.then(res => res.json()) 
+                    //.then(data => obj = data)
+                    //.then(() => console.log(obj))//how do callbacks work?
+                obj = await response.json()
+                console.log(obj)
+                var name = obj[0].name
+                var distance = obj[0].distance / 1609
+                var duration = obj[0].moving_time / 60
+                var pace = duration / distance
+                output_name.innerHTML = name + ":"
+                output_distance.innerHTML = distance.toFixed(2) + " mi, "
+                output_duration.innerHTML = duration.toFixed(2) + " min, "
+                output_pace.innerHTML = pace.toFixed(2) + "/mi"
+
+                return obj;
+            }
+
+
+
+            function reAuthorize(){
+                var obj;
+                fetch(auth_link,{
+                    method: 'post',
+                    headers: {
+                        'Accept': 'application/json, text/plain, */*',
+                        'Content-Type': 'application/json'
+                    },
+
+                    body: JSON.stringify({
+                        client_id: '62278',
+                        client_secret: '',
+                        refresh_token: '',
+                        grant_type: 'refresh_token'
+                    })
+                }).then(res => res.json())
+                    .then((res => getActivities(res)))
+                    //.then(data => obj = data)//how do callbacks work?
+                   // .then(() => console.log(obj))
+                //console.log(obj)
+                return obj
+            }
+
+            obj = reAuthorize()
+            //console.log(obj)
+
+            //document.write(obj);
+
+            function printout(){
+                
+
+            }
+
+
+    </script>
+    <!--script src=strava_api.js></script-->
+</body>
+
+
+
+</html>
