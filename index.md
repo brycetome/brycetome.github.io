@@ -24,7 +24,7 @@ Right now this is a broken file without the API keys. (Inspect element to see so
 
 Strava is like a social media app for running and other exercise.
 
-[Strava Weekly Mileage Found](strava-api-weeky.html)
+[Strava Weekly Mileage Found](strava-api-weekly.html)
 
 Got weekly mileage working, with some bugs right now -- like if a bike ride was posted since last Monday. Learned about Epoch time in the process. I'm going to see if I can get this on my smart mirror. [Screenshot](Strava_API_weekly.PNG)  posted since I removed API keys before upload to Git, might want to open it in a new tab...
 
