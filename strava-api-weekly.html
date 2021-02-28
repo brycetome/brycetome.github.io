@@ -4,10 +4,10 @@
 
 <body>
 
-   <h3>Latest run</h3>
+   <h3>Weekly mileage</h3>
 
     <span id="output_name" style="color:rgb(255, 0, 0); font-family: helvetica; font-weight: bold"></span>
-    <span id="output_distance" style="font-family: helvetica"></span>
+    <span id="output_distance" style="color: #fc5200; font-family: helvetica"></span>
     <span id="output_duration" style="font-family: helvetica"></span>
     <span id="output_pace" style="font-family: helvetica"></span>
 
@@ -16,26 +16,48 @@
     <script type="text/javascript">
 
             var objfinal;
+            var date = new Date();
+            date.setHours(0,0,0,0);
+            console.log(date);
+            var day = date.getDay();
+            var prevMonday = new Date();
+            if(date.getDay() == 0)
+                prevMonday.setDate(date.getDate() - 6);
+            else
+                prevMonday.setDate(date.getDate() - (day-2));
+            prevMonday.setHours(0,0,0,0);
+            var epochLastMonday = prevMonday.getTime() ;
+            console.log(prevMonday);
+            console.log(epochLastMonday);
+            prevMonday = prevMonday / 1000;
+            console.log(prevMonday);
             const auth_link = "https://www.strava.com/oauth/token"
             var obj;
 
             async function getActivities(res){
                 var obj;
-                const activities_link = `https://www.strava.com/api/v3/athlete/activities?access_token=${res.access_token}` //gets access token, but how?
+                const activities_link = `https://www.strava.com/api/v3/athlete/activities?after=${this.prevMonday}&access_token=${res.access_token}`
                 const response = await fetch(activities_link)
                     //.then(res => res.json()) 
                     //.then(data => obj = data)
                     //.then(() => console.log(obj))//how do callbacks work?
                 obj = await response.json()
                 console.log(obj)
-                var name = obj[0].name
-                var distance = obj[0].distance / 1609
-                var duration = obj[0].moving_time / 60
-                var pace = duration / distance
-                output_name.innerHTML = name + ":"
-                output_distance.innerHTML = distance.toFixed(2) + " mi, "
-                output_duration.innerHTML = duration.toFixed(2) + " min, "
-                output_pace.innerHTML = pace.toFixed(2) + "/mi"
+                this.objFinal = obj;
+                var totalMeters = 0;
+                for(var i = 0; i < obj.length; i ++){
+                    totalMeters += obj[i].distance;
+                }
+                var totalMiles = totalMeters / 1609;
+                output_distance.innerHTML = "Weekly miles: " + totalMiles.toFixed(2);
+                //var name = obj[0].name
+                //var distance = obj[0].distance / 1609
+                //var duration = obj[0].moving_time / 60
+                //var pace = duration / distance
+                //output_name.innerHTML = name + ":"
+                //output_distance.innerHTML = distance.toFixed(2) + " mi, "
+                //output_duration.innerHTML = duration.toFixed(2) + " min, "
+                //output_pace.innerHTML = pace.toFixed(2) + "/mi"
 
                 return obj;
             }
