@@ -24,6 +24,12 @@ Right now this is a broken file without the API keys. (Inspect element to see so
 
 Strava is like a social media app for running and other exercise.
 
+[Strava Weekly Mileage Found](strava-api-weeky.html)
+
+Got weekly mileage working, with some bugs right now -- like if a bike ride was posted since last Monday. Learned about Epoch time in the process. I'm going to see if I can get this on my smart mirror. Screenshot posted since I removed API keys before upload to Git.
+
+![](Strava_API_weekly.PNG?raw=true)
+
 ## Potential Ideas
 
 I'm thinking about returning to my smart mirror and adding a feature with a running app API to display my past runs. I also may try to start a MySQL project to store information like and ask a smart speaker to speak it such as: What time is practice? How far do I run today?
